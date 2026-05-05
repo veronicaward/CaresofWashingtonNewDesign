@@ -108,3 +108,49 @@ function priorityNav() {
 
 priorityNav();
 new ResizeObserver(priorityNav).observe(document.querySelector('.header-inner'));
+
+// ===== CONFIRMATION TOAST =====
+if (sessionStorage.getItem('cares_message_sent')) {
+  sessionStorage.removeItem('cares_message_sent');
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `
+    <div class="toast-inner">
+      <div class="toast-body">
+        <p>Your message was sent! Someone from Cares will respond to you within 1–2 business days.</p>
+      </div>
+      <button class="toast-close" aria-label="Dismiss">&times;</button>
+    </div>`;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => toast.classList.add('toast-show'));
+  });
+  toast.querySelector('.toast-close').addEventListener('click', () => {
+    toast.classList.remove('toast-show');
+    toast.addEventListener('transitionend', () => toast.remove());
+  });
+}
+
+if (sessionStorage.getItem('cares_applied')) {
+  sessionStorage.removeItem('cares_applied');
+  const applyUrl = sessionStorage.getItem('cares_apply_url') || '';
+  sessionStorage.removeItem('cares_apply_url');
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `
+    <div class="toast-inner">
+      <div class="toast-body">
+        <p>Your application was successfully submitted. You'll receive an automated confirmation email. Someone from Cares will be in touch with you in 3–5 business days.</p>
+        ${applyUrl ? `<a class="toast-edit" href="${applyUrl}">Edit application</a>` : ''}
+      </div>
+      <button class="toast-close" aria-label="Dismiss">&times;</button>
+    </div>`;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => toast.classList.add('toast-show'));
+  });
+  toast.querySelector('.toast-close').addEventListener('click', () => {
+    toast.classList.remove('toast-show');
+    toast.addEventListener('transitionend', () => toast.remove());
+  });
+}

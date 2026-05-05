@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Employment &amp; Training — Cares of Washington</title>
+  <title>Applying for Services — Cares of Washington</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
 
-  <!-- ===== HEADER / NAV ===== -->
   <header class="site-header">
     <div class="header-inner">
       <a href="../index.html" class="logo" aria-label="Cares of Washington home">
@@ -70,7 +69,6 @@
     </div>
   </header>
 
-  <!-- ===== MOBILE DRAWER ===== -->
   <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
   <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
     <ul class="drawer-list">
@@ -103,7 +101,8 @@
           <li><a href="../who-we-serve/index.html">Who we serve</a></li>
         </ul>
         <span class="drawer-divider" aria-hidden="true"></span>
-      </li>      <li>
+      </li>
+      <li>
         <a href="../impact-stories/index.html" class="drawer-link">Impact stories</a>
         <span class="drawer-divider" aria-hidden="true"></span>
       </li>
@@ -135,80 +134,130 @@
     </div>
   </nav>
 
-  <!-- ===== PAGE CONTENT ===== -->
   <main class="inner-page">
 
     <div class="inner-page-header">
-      <a href="index.html" class="back-link story-page-title">
+      <a href="javascript:history.back()" class="back-link story-page-title">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        Employment &amp; Training
+        <span id="form-title">Applying for services</span>
       </a>
-      <div class="page-header-actions">
-        <a href="apply.html?service=Employment%20%26%20Training" class="btn btn-primary">Apply for this service</a>
-        <a href="../about/send-message.html" class="btn btn-secondary">Contact us</a>
-      </div>
     </div>
 
-    <div class="inner-hero">
-      <div class="inner-hero-placeholder"></div>
-    </div>
-
-    <!-- Intro -->
     <section class="inner-section">
-      <p class="inner-body">Overview of the program and services ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-    </section>
+      <form class="form-stack" action="#" method="post">
 
-    <!-- Services -->
-    <section class="inner-section">
-      <h3 class="inner-h3">Services</h3>
-      <ul class="inner-list">
-        <li>Lorem</li>
-        <li>Lorem</li>
-        <li>Lorem</li>
-        <li>Lorem</li>
-        <li>Lorem</li>
-        <li>Lorem</li>
-      </ul>
-    </section>
-
-    <!-- Eligibility -->
-    <section class="inner-section">
-      <h3 class="inner-h3">You're eligible if you are</h3>
-      <ul class="check-list">
-        <li>Lorem</li>
-        <li>Lorem</li>
-        <li>Lorem</li>
-      </ul>
-    </section>
-
-    <!-- Contact -->
-    <section class="inner-section">
-      <h3 class="inner-h3">Cares Employment &amp; Training contact</h3>
-      <div class="coordinator">
-        <div class="coordinator-avatar"></div>
-        <div class="coordinator-info">
-          <span class="coordinator-name">Jared Sand</span>
-          <span class="coordinator-detail">jsand@caresofwa.org</span>
-          <span class="coordinator-detail">425-476-3860</span>
+        <div class="form-group form-full">
+          <label class="form-label">I'm filling out this form as</label>
+          <div class="form-checkbox-group">
+            <label class="form-checkbox-label">
+              <input type="radio" name="filling_as" value="case_manager" />
+              A case manager
+            </label>
+            <label class="form-checkbox-label">
+              <input type="radio" name="filling_as" value="myself" />
+              Myself
+            </label>
+            <label class="form-checkbox-label">
+              <input type="radio" name="filling_as" value="caretaker" />
+              A caretaker
+            </label>
+          </div>
         </div>
-      </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="first-name">First name</label>
+            <input class="form-input" type="text" id="first-name" name="first_name" autocomplete="given-name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last-name">Last name</label>
+            <input class="form-input" type="text" id="last-name" name="last_name" autocomplete="family-name" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dob">Date of birth</label>
+          <input class="form-input" type="date" id="dob" name="dob" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input" type="email" id="email" name="email" autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone</label>
+          <input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="referral">Who referred you to Cares of Washington?</label>
+          <input class="form-input" type="text" id="referral" name="referral" />
+        </div>
+
+        <div class="form-group form-full">
+          <label class="form-label">Categorized as significantly disabled</label>
+          <div class="form-checkbox-group">
+            <label class="form-checkbox-label">
+              <input type="checkbox" name="significantly_disabled" value="yes" />
+              Yes
+            </label>
+            <label class="form-checkbox-label">
+              <input type="checkbox" name="significantly_disabled" value="no" />
+              No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group form-full">
+          <label class="form-label" for="disability-impact">How does your disability affect your ability to work?</label>
+          <textarea class="form-textarea" id="disability-impact" name="disability_impact" rows="4"></textarea>
+        </div>
+
+        <div class="form-group form-full">
+          <label class="form-label" for="work-history">Work history</label>
+          <textarea class="form-textarea" id="work-history" name="work_history" rows="4"></textarea>
+        </div>
+
+        <div class="form-group form-full">
+          <label class="form-label" for="education">Education</label>
+          <textarea class="form-textarea" id="education" name="education" rows="4"></textarea>
+        </div>
+
+        <label class="form-attach form-full">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          Attach documents
+          <input type="file" style="display:none" multiple />
+        </label>
+
+        <div class="form-group form-full">
+          <label class="form-label" for="special-skills">Special skills or equipment you can operate</label>
+          <textarea class="form-textarea" id="special-skills" name="special_skills" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="min-salary">Minimum salary requirement</label>
+          <div class="form-currency">
+            <span class="form-currency-symbol">$</span>
+            <input class="form-input" type="number" id="min-salary" name="min_salary" min="0" step="1000" placeholder="0" />
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end;">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </form>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-social">
-        <a href="mailto:info@caresofwa.org" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/cares-of-washington" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://www.instagram.com/caresofwa" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-        </a>
+        <a href="mailto:info@caresofwa.org" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a href="https://www.linkedin.com/company/cares-of-washington" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://www.instagram.com/caresofwa" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="https://www.indeed.com/cmp/Cares-of-Washington/jobs" target="_blank" rel="noopener noreferrer">Careers</a>
@@ -220,5 +269,20 @@
   </footer>
 
   <script src="../assets/js/nav.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const service = params.get('service');
+    if (service) {
+      document.getElementById('form-title').textContent = 'Applying for ' + service;
+      document.title = 'Applying for ' + service + ' — Cares of Washington';
+    }
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sessionStorage.setItem('cares_applied', '1');
+      sessionStorage.setItem('cares_apply_url', location.href);
+      history.back();
+    });
+  </script>
 </body>
 </html>
