@@ -140,9 +140,97 @@
         Donate
       </a>
     </div>
-    <div class="inner-hero"><div class="inner-hero-placeholder"></div></div>
+
     <section class="inner-section">
-      <p class="inner-body">Content coming soon.</p>
+      <p class="inner-body">$15 donation can fund one hour of 1:1 job coaching for a disabled or low-income neighbor.</p>
+      <p class="inner-body">$100 donation can fund one month of job coaching for 2 clients</p>
+
+      <p class="form-label" style="margin-top:24px;margin-bottom:10px;">Donation frequency</p>
+      <div class="form-checkbox-group" style="margin-bottom:20px;">
+        <label class="form-checkbox-label">
+          <input type="radio" name="frequency" value="monthly" style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          Monthly
+        </label>
+        <label class="form-checkbox-label">
+          <input type="radio" name="frequency" value="one-time" checked style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          One time
+        </label>
+      </div>
+
+      <!-- Preset amount options -->
+      <p class="form-label" style="margin-bottom:10px;">Donation amount</p>
+      <div class="form-checkbox-group" style="margin-bottom:20px;">
+        <label class="form-checkbox-label">
+          <input type="radio" name="preset_amount" value="15" checked style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          $15
+        </label>
+        <label class="form-checkbox-label">
+          <input type="radio" name="preset_amount" value="25" style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          $25
+        </label>
+        <label class="form-checkbox-label">
+          <input type="radio" name="preset_amount" value="50" style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          $50
+        </label>
+        <label class="form-checkbox-label">
+          <input type="radio" name="preset_amount" value="100" style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          $100
+        </label>
+        <label class="form-checkbox-label">
+          <input type="radio" name="preset_amount" value="250" style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          $250
+        </label>
+        <label class="form-checkbox-label">
+          <input type="radio" name="preset_amount" value="custom" style="width:18px;height:18px;accent-color:var(--teal);cursor:pointer;flex-shrink:0;" />
+          Custom
+        </label>
+      </div>
+
+      <div class="form-group" id="custom-amount-group" style="display:none;margin-bottom:20px;">
+        <div class="form-currency">
+          <span class="form-currency-symbol">$</span>
+          <input class="form-input" type="number" id="donation-amount" name="amount" min="1" style="padding-left:28px;" />
+        </div>
+      </div>
+
+      <!-- Toggles -->
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:20px;">
+        <label class="donate-toggle-row">
+          <span class="donate-toggle">
+            <input type="checkbox" id="toggle-anonymous" />
+            <span class="donate-toggle-slider"></span>
+          </span>
+          <span>Show my name as anonymous when displaying my name in public</span>
+        </label>
+        <label class="donate-toggle-row">
+          <span class="donate-toggle">
+            <input type="checkbox" id="toggle-dedicate" />
+            <span class="donate-toggle-slider"></span>
+          </span>
+          <span style="flex:1;">Dedicate this donation</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </label>
+      </div>
+
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-bottom:28px;">
+        <button type="button" class="btn btn-secondary btn-sm" style="border-radius:50px;">Start a fundraiser</button>
+        <button type="button" class="btn btn-primary btn-sm" style="border-radius:50px;">Continue to payment</button>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:12px;">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://caresofwa.org/give/donate.html" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;color:var(--text-dark);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <!-- X / Twitter -->
+        <a href="https://twitter.com/intent/tweet?url=https://caresofwa.org/give/donate.html&text=Support+Cares+of+Washington" target="_blank" rel="noopener noreferrer" aria-label="Share on X" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;color:var(--text-dark);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.043 2.25H8.1l4.258 5.63 5.886-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <!-- Email -->
+        <a href="mailto:?subject=Support+Cares+of+Washington&body=https://caresofwa.org/give/donate.html" aria-label="Share via email" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;color:var(--text-dark);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://caresofwa.org/give/donate.html" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;color:var(--text-dark);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/caresofwa" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;color:var(--text-dark);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+        <!-- Copy link -->
+        <button type="button" id="copy-link-btn" aria-label="Copy link" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;color:var(--text-dark);background:none;cursor:pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+      </div>
     </section>
   </main>
 
@@ -162,6 +250,56 @@
     </div>
   </footer>
 
+  <style>
+    .donate-toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+    .donate-toggle-row:first-child { border-top: 1px solid var(--border); }
+    .donate-toggle { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
+    .donate-toggle input { opacity: 0; width: 0; height: 0; }
+    .donate-toggle-slider {
+      position: absolute; inset: 0;
+      background: #ccc;
+      border-radius: 24px;
+      transition: background 0.2s;
+    }
+    .donate-toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 18px; height: 18px;
+      left: 3px; top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .donate-toggle input:checked + .donate-toggle-slider { background: var(--teal); }
+    .donate-toggle input:checked + .donate-toggle-slider::before { transform: translateX(18px); }
+  </style>
+
   <script src="../assets/js/nav.js"></script>
+  <script>
+    document.querySelectorAll('input[name="preset_amount"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        const group = document.getElementById('custom-amount-group');
+        group.style.display = this.value === 'custom' ? 'block' : 'none';
+        if (this.value === 'custom') document.getElementById('donation-amount').focus();
+      });
+    });
+
+    document.getElementById('copy-link-btn').addEventListener('click', function () {
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        var btn = document.getElementById('copy-link-btn');
+        btn.setAttribute('aria-label', 'Link copied!');
+        setTimeout(function () { btn.setAttribute('aria-label', 'Copy link'); }, 2000);
+      });
+    });
+  </script>
 </body>
 </html>
