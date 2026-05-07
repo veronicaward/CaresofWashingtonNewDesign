@@ -9,7 +9,7 @@
   --text-dark:  #1a1a1a;
   --text-mid:   #444;
   --white:      #ffffff;
-  --header-h:   64px;
+  --header-h:   80px;
   --drawer-w:   300px;
   --radius:     12px;
   --font:       'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -79,7 +79,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   flex-shrink: 0;
 }
 .logo-img {
-  height: 60px;
+  height: 72px;
   width: auto;
   display: block;
 }
@@ -274,54 +274,40 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 
 /* Hero */
 .hero {
-  background: #E4F6F6;
   margin: 0;
   padding: 0;
 }
 .hero-inner {
   max-width: var(--content-w);
   margin: 0 auto;
-  padding: 20px var(--content-px);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 32px;
+  padding: 48px var(--content-px) 40px;
 }
-.hero-text {
+.hero-heading-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+.hero-heading-row .btn {
+  flex-shrink: 0;
+  width: 320px;
+  text-align: center;
 }
 .hero-heading {
   font-family: var(--font-serif);
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(30px, 4vw, 48px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--text-dark);
 }
 .hero-body {
   font-family: var(--font-serif);
-  font-size: clamp(15px, 1.6vw, 20px);
+  font-size: clamp(22px, 2.6vw, 32px);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--text-dark);
-}
-.hero-illustration {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-.hero-illus-img {
-  display: block;
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-}
-
-@media (max-width: 700px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-illustration { display: none; }
+  max-width: 640px;
 }
 
 /* Impact stats */
@@ -342,7 +328,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   font-family: var(--font-serif);
 }
 .impact-donate {
-  font-size: 0.82rem;
+  font-size: 1rem;
   color: var(--text-dark);
   font-weight: 500;
 }
@@ -393,10 +379,26 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   grid-template-columns: repeat(3, 1fr);
   gap: 16px 16px;
   row-gap: 40px;
+  margin: 0 -12px;
 }
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.card:hover {
+  background: #fff;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.card {
+  text-decoration: none;
+  color: inherit;
 }
 .card-img-placeholder {
   width: 100%;
