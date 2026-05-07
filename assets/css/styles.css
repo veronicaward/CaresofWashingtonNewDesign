@@ -273,51 +273,55 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 
 /* Hero */
 .hero {
-  max-width: var(--content-w);
-  margin: 24px auto;
-  padding: 0 var(--content-px);
+  background: #E4F6F6;
+  margin: 0;
+  padding: 0;
 }
-.hero-media {
-  position: relative;
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-}
-.hero-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.hero-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 100%);
-  pointer-events: none;
-}
-.hero-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-/* Mission */
-.mission {
+.hero-inner {
   max-width: var(--content-w);
   margin: 0 auto;
-  padding: 36px var(--content-px);
-  text-align: center;
+  padding: 20px var(--content-px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px;
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.hero-heading {
   font-family: var(--font-serif);
-  font-size: clamp(24px, 3.5vw, 42px);
-  font-weight: 200;
-  line-height: 1.5;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
   color: var(--text-dark);
 }
-.highlight { color: #4A90D9; }
+.hero-body {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 1.6vw, 20px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+.hero-illustration {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.hero-illus-img {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-illustration { display: none; }
+}
 
 /* Impact stats */
 .impact {
@@ -386,7 +390,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 16px 16px;
+  row-gap: 40px;
 }
 .card {
   display: flex;
@@ -398,6 +403,14 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   background: #c5c5c5;
   border-radius: 8px;
   margin-bottom: 12px;
+}
+.card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: block;
 }
 .card-body {
   display: flex;
@@ -428,7 +441,6 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   .cards-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr; gap: 16px; }
   .stat:not(:first-child) { border-left: none; border-top: 1px solid #ddd; padding-left: 0; padding-top: 16px; }
-  .mission { font-size: 26px; }
 }
 
 /* ===== CARF TRUST BADGE ===== */
@@ -447,9 +459,9 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   height: auto;
 }
 .trust-title {
-  font-size: 1rem;
+  font-size: 24px;
   font-weight: 700;
-  font-family: var(--font);
+  font-family: var(--font-serif);
   color: var(--text-dark);
 }
 .trust-subtitle {
@@ -561,7 +573,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 }
 .inner-hero-placeholder {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 4;
   background: #c5c5c5;
   border-radius: 16px;
 }
