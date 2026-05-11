@@ -1,0 +1,22 @@
+name: Deploy ia-exploration
+
+on:
+  push:
+    branches: [ia-exploration]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to gh-pages /ia/
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          destination_dir: ia
+          keep_files: true
+          exclude_assets: '.github'
