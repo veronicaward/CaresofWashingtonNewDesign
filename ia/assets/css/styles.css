@@ -1161,8 +1161,12 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 /* Hamburger: always visible on mobile, visible on desktop only when priority nav forces it */
 .hamburger.force-show { display: flex; }
 
+/* Nav CTA button — hide on mobile (hamburger handles it) */
+.nav-cta { flex-shrink: 0; }
+
 @media (max-width: 768px) {
   .desktop-nav { display: none; }
+  .nav-cta { display: none; }
   .hamburger { display: flex; }
   .header-inner { gap: 12px; }
 }
