@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cares of Washington</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Cares of Washington home">
+        <img src="../assets/cares-logo.webp" alt="Cares of Washington" class="logo-img" />
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Get services <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="get-services/index.html" role="menuitem">Overview</a></li>
+              <li><a href="get-services/ticket-to-work.html" role="menuitem">Ticket to work</a></li>
+              <li><a href="get-services/connect-for-success.html" role="menuitem">Connect for Success</a></li>
+              <li><a href="get-services/employment-training.html" role="menuitem">Employment &amp; Training</a></li>
+              <li><a href="get-services/foundational-community-services.html" role="menuitem">Foundational community services</a></li>
+              <li><a href="get-services/developmental-disabilities.html" role="menuitem">Developmental Disabilities Division</a></li>
+              <li><a href="get-services/vocational-rehabilitation.html" role="menuitem">Division of Vocational Rehabilitation</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              For partners <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="partners/employment-partners.html" role="menuitem">Employment partners</a></li>
+              <li><a href="partners/foundation-funders.html" role="menuitem">Foundation funders</a></li>
+              <li><a href="who-we-serve/index.html" role="menuitem">Who we serve</a></li>
+              <li><a href="give/donate.html" role="menuitem">Give</a></li>
+            </ul>
+          </li>
+          <li><a href="impact-stories/index.html" class="nav-link">Impact stories</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Give <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="give/donate.html" role="menuitem">Donate</a></li>
+              <li><a href="https://www.cardonationwizard.com/cars-for-charity/donate/donate-a-car-for-charity.html?affilID=Cares%20of%20Washington&affilName=Cares%20of%20Washington&ref=cars-for-charity" role="menuitem" target="_blank" rel="noopener noreferrer" class="external-link">Donate a car <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Who we are <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="about/who-we-are.html" role="menuitem">Who we are</a></li>
+              <li><a href="about/contact.html" role="menuitem">Contact</a></li>
+              <li><a href="about/blog.html" role="menuitem">Blog</a></li>
+              <li><a href="https://www.indeed.com/cmp/Cares-of-Washington/jobs" role="menuitem" target="_blank" rel="noopener noreferrer" class="external-link">Careers <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE DRAWER ===== -->
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <ul class="drawer-list">
+      <li>
+        <a href="index.html" class="drawer-link active">Home</a>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          Get services <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="get-services/index.html">Overview</a></li>
+          <li><a href="get-services/ticket-to-work.html">Ticket to work</a></li>
+          <li><a href="get-services/connect-for-success.html">Connect for Success</a></li>
+          <li><a href="get-services/employment-training.html">Employment &amp; Training</a></li>
+          <li><a href="get-services/foundational-community-services.html">Foundational community services</a></li>
+          <li><a href="get-services/developmental-disabilities.html">Developmental Disabilities Division</a></li>
+          <li><a href="get-services/vocational-rehabilitation.html">Division of Vocational Rehabilitation</a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          For partners <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="partners/employment-partners.html">Employment partners</a></li>
+          <li><a href="partners/foundation-funders.html">Foundation funders</a></li>
+          <li><a href="who-we-serve/index.html">Who we serve</a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>      <li>
+        <a href="impact-stories/index.html" class="drawer-link">Impact stories</a>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          Give <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="give/donate.html">Donate</a></li>
+          <li><a href="https://www.cardonationwizard.com/cars-for-charity/donate/donate-a-car-for-charity.html?affilID=Cares%20of%20Washington&affilName=Cares%20of%20Washington&ref=cars-for-charity" target="_blank" rel="noopener noreferrer" class="external-link">Donate a car <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          Who we are <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="about/who-we-are.html">Who we are</a></li>
+          <li><a href="about/contact.html">Contact</a></li>
+          <li><a href="about/blog.html">Blog</a></li>
+          <li><a href="https://www.indeed.com/cmp/Cares-of-Washington/jobs" target="_blank" rel="noopener noreferrer" class="external-link">Careers <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="give/donate.html" class="btn btn-primary btn-full">Donate now</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-heading-row">
+          <h1 class="hero-heading">Our mission</h1>
+          <a href="get-services/index.html" class="btn btn-primary">Get services</a>
+        </div>
+        <p class="hero-body">is to support people with disabilities and low incomes to realize their purpose, potential, and strength</p>
+      </div>
+    </section>
+
+    <!-- Impact stats -->
+    <section class="impact">
+      <div class="impact-header">
+        <h2 class="impact-heading">The Cares impact</h2>
+        <a href="give/donate.html" class="impact-donate">Donate now &rarr;</a>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-number">67%</span>
+          <span class="stat-label">Employment rate</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">77%</span>
+          <span class="stat-label">Retention rate</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">13,400</span>
+          <span class="stat-label">Served</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- More about cares cards -->
+    <section class="cards-section">
+      <h2 class="cards-heading">More about cares</h2>
+      <div class="cards-grid">
+        <a href="who-we-serve/index.html" class="card">
+          <img src="../assets/card-who-we-serve.png" alt="Who we serve" class="card-img" />
+          <div class="card-body">
+            <h3 class="card-title">Who we serve</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <span class="btn btn-secondary">Explore more</span>
+          </div>
+        </a>
+        <a href="partners/employment-partners.html" class="card">
+          <img src="../assets/card-employment-partners.png" alt="Employment partners" class="card-img" />
+          <div class="card-body">
+            <h3 class="card-title">Employment partners</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <span class="btn btn-secondary">Explore more</span>
+          </div>
+        </a>
+        <a href="impact-stories/index.html" class="card">
+          <img src="../assets/card-impact-stories.webp" alt="Impact stories" class="card-img" />
+          <div class="card-body">
+            <h3 class="card-title">Impact stories</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <span class="btn btn-secondary">Explore more</span>
+          </div>
+        </a>
+        <a href="partners/foundation-funders.html" class="card">
+          <img src="../assets/card-foundation-funders.png" alt="Foundation funders" class="card-img card-img-contain" />
+          <div class="card-body">
+            <h3 class="card-title">Foundation funders</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <span class="btn btn-secondary">Explore more</span>
+          </div>
+        </a>
+        <a href="about/who-we-are.html" class="card">
+          <img src="../assets/card-who-we-are.png" alt="Who we are" class="card-img" />
+          <div class="card-body">
+            <h3 class="card-title">Who we are</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <span class="btn btn-secondary">Explore more</span>
+          </div>
+        </a>
+        <a href="get-services/index.html" class="card">
+          <img src="../assets/card-services-overview.png" alt="Services overview" class="card-img" />
+          <div class="card-body">
+            <h3 class="card-title">Services overview</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <span class="btn btn-secondary">Explore more</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CARF trust section -->
+    <section class="trust-badge-section">
+      <img src="../assets/logo-carf.webp" alt="CARF Accredited" class="carf-logo" />
+      <h2 class="trust-title">Care you can trust</h2>
+      <p class="trust-subtitle">Three-Year CARF Accreditation</p>
+    </section>
+
+    <!-- Video -->
+    <section class="video-section">
+      <a href="https://www.youtube.com/watch?v=G_xiwK71gAI" target="_blank" rel="noopener noreferrer" class="video-wrap" aria-label="Watch Cares of Washington video on YouTube">
+        <img src="https://img.youtube.com/vi/G_xiwK71gAI/maxresdefault.jpg" alt="Cares of Washington video" class="video-thumb" />
+        <div class="video-play">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true">
+            <rect width="68" height="48" rx="10" fill="rgba(0,0,0,0.65)"/>
+            <polygon points="26,14 26,34 46,24" fill="white"/>
+          </svg>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+        <a href="mailto:info@caresofwa.org" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/cares-of-washington" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.instagram.com/caresofwa" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="https://www.indeed.com/cmp/Cares-of-Washington/jobs" target="_blank" rel="noopener noreferrer">Careers</a>
+        <a href="#">Privacy policy</a>
+        <a href="about/contact.html">Contact</a>
+        <a href="about/blog.html">Blog</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/nav.js"></script>
+</body>
+</html>
