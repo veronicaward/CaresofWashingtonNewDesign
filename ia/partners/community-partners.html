@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Partners — Cares of Washington</title>
+  <link rel="stylesheet" href="../assets/css/styles.css?v=11" />
+</head>
+<body>
+
+  <div data-site-header></div>
+  <main class="inner-page">
+
+    <div class="inner-page-header">
+      <a href="../index.html" class="back-link story-page-title">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Community partners
+      </a>
+      <div class="page-header-actions">
+        <a href="become-a-partner.html" class="btn btn-primary">Become a partner</a>
+        <a href="#" class="btn btn-secondary" download>Download tax incentive worksheet</a>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="inner-section">
+      <p class="inner-body">Our partnerships reduce barriers to self-sufficiency and enable efficient service delivery. We give participants safe housing, family support, and access to job training that local employers value. Employers also provide opportunities to assess the skills, abilities and interests of our participants which leads to greater success for our employers and participants. <a href="https://choosework.ssa.gov/findhelp" target="_blank" rel="noopener noreferrer" class="external-link" style="display:inline-flex;color:var(--teal);">Learn more about employment providers <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></p>
+    </section>
+
+    <!-- Featured partners -->
+    <section class="inner-section">
+      <div class="funder-tier">
+        <h3 class="inner-h3">Partner benefits</h3>
+        <ul class="inner-list">
+          <li>Pre-screened referrals (by Cares)</li>
+          <li>No-cost recruiting – no agency fees</li>
+          <li>Job-ready applicants</li>
+          <li>Highly motivated employees</li>
+          <li>Ongoing support from Cares staff</li>
+          <li>Information about Americans with Disabilities Act, Tax credits, assistive technology and training support</li>
+          <li>Job coaching and consultation specific to the participant's disability</li>
+          <li>Increased workforce diversity</li>
+          <li>Federal tax incentives</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Partner businesses -->
+    <section class="inner-section">
+      <div class="funder-tier">
+        <h3 class="inner-h3">Partner businesses</h3>
+        <ul class="inner-list">
+          <li>AMC - Silverdale</li>
+          <li>Arby's - Bothell</li>
+          <li>Avvo</li>
+          <li>Best Western Harbor Inn</li>
+          <li>Big Lots - Kent</li>
+          <li>Billy McHales</li>
+          <li>Burlington Coat Factory - Edmonds</li>
+          <li>CBRE - Redmond</li>
+          <li>Decor Chocolates</li>
+          <li>Denny's - Renton</li>
+          <li>Dollar Tree - Monroe</li>
+          <li>Franke Tobey Jones, Tacoma</li>
+          <li>Fred Meyer - Kent</li>
+          <li>Gold Bar Family Grocer</li>
+          <li>Jay's Market</li>
+          <li>Judson Park</li>
+          <li>Microsoft Cafe 16</li>
+          <li>Nostalgia Bakery, Port Orchard</li>
+          <li>Panera Bread - Edmonds</li>
+          <li>Perfect Paws Pet Grooming</li>
+          <li>Pizza Hut - Bonney Lake</li>
+          <li>Romac Industries - Sultan</li>
+          <li>Round Table Pizza - Gig Harbor</li>
+          <li>Safeway - Bainbridge Island</li>
+          <li>Safeway - Des Moines</li>
+          <li>Safeway - Gig Harbor</li>
+          <li>Safeway - Lake Stevens</li>
+          <li>Safeway - Marysville</li>
+          <li>Safeway - Seattle</li>
+          <li>Space Needle</li>
+          <li>St. Vincent de Paul's - Port Orchard</li>
+          <li>St. Vincent de Paul's - Puyallup</li>
+          <li>Taco Bell - Kent</li>
+          <li>The End Zone</li>
+          <li>Value Village - Everett</li>
+          <li>Walmart - Auburn</li>
+          <li>Walmart - Monroe</li>
+          <li>Warm Beach Senior Center</li>
+          <li>Westside Pizza - Port Orchard</li>
+          <li>Woodinville Florist</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-site-footer></div>
+
+  <!-- Toast -->
+  <div class="toast" id="partner-toast" role="status" aria-live="polite">
+    <div class="toast-inner">
+      <div class="toast-body">
+        <span>An automated email has been sent to you to confirm your form was submitted. Someone from Cares will be in touch within 3–5 business days.</span>
+        <a href="become-a-partner.html" class="toast-edit">Edit form</a>
+      </div>
+      <button class="toast-close" id="toast-close" aria-label="Dismiss">&#x2715;</button>
+    </div>
+  </div>
+
+  <script src="../assets/js/nav.js?v=8"></script>
+  <script>
+    if (sessionStorage.getItem('partner_form_submitted')) {
+      sessionStorage.removeItem('partner_form_submitted');
+      const toast = document.getElementById('partner-toast');
+      toast.classList.add('toast-show');
+      document.getElementById('toast-close').addEventListener('click', function () {
+        toast.classList.remove('toast-show');
+      });
+    }
+  </script>
+</body>
+</html>
