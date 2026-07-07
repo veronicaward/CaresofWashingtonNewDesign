@@ -3,12 +3,15 @@
 // <div data-site-footer></div>. This function builds and injects the shared markup so
 // nav/footer changes only ever need to happen here, not in 20 duplicated HTML files.
 (function () {
-  const segments = window.location.pathname.split('/').filter(Boolean);
-  const depth = segments.length > 0 && segments[segments.length - 1].includes('.')
-    ? segments.length - 1
-    : segments.length;
+  // Derive depth from this script's own (unresolved) relative src rather than
+  // window.location.pathname — the pathname includes whatever prefix the site
+  // is hosted under (e.g. GitHub Pages project + /ia/ subdirectory), which has
+  // nothing to do with how deep the current HTML file sits within the site.
+  const scriptEl = document.currentScript || document.querySelector('script[src*="nav.js"]');
+  const rawSrc = scriptEl.getAttribute('src') || '';
+  const depth = (rawSrc.match(/\.\.\//g) || []).length;
   const prefix = '../'.repeat(depth);
-  const isHome = depth === 0 && (segments.length === 0 || segments[0] === 'index.html');
+  const isHome = depth === 0 && /(\/index\.html|\/)$/.test(window.location.pathname);
   const p = (path) => prefix + path;
 
   const headerHTML = `
