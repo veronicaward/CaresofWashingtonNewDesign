@@ -1,3 +1,162 @@
+// ===== SITE CHROME (single source of truth for header, mobile drawer, footer) =====
+// Every page loads this file and includes an empty <div data-site-header></div> and
+// <div data-site-footer></div>. This function builds and injects the shared markup so
+// nav/footer changes only ever need to happen here, not in 20 duplicated HTML files.
+(function () {
+  const segments = window.location.pathname.split('/').filter(Boolean);
+  const depth = segments.length > 0 && segments[segments.length - 1].includes('.')
+    ? segments.length - 1
+    : segments.length;
+  const prefix = '../'.repeat(depth);
+  const isHome = depth === 0 && (segments.length === 0 || segments[0] === 'index.html');
+  const p = (path) => prefix + path;
+
+  const headerHTML = `
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="${p('index.html')}" class="logo" aria-label="Cares of Washington home">
+        <img src="${p('assets/cares-logo.webp')}" alt="Cares of Washington" class="logo-img" />
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              For clients <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="${p('get-services/index.html')}" role="menuitem">Employment services</a></li>
+              <li><a href="${p('earned-income-program.html')}" role="menuitem">Employer services</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              For partners <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="${p('partners/employment-partners.html')}" role="menuitem">Employment partners</a></li>
+              <li><a href="${p('partners/foundation-funders.html')}" role="menuitem">Foundation funders</a></li>
+              <li><a href="${p('who-we-serve/index.html')}" role="menuitem">Who we serve</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Donate <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="${p('give/donate.html')}" role="menuitem">Donate</a></li>
+              <li><a href="https://www.cardonationwizard.com/cars-for-charity/donate/donate-a-car-for-charity.html?affilID=Cares%20of%20Washington&affilName=Cares%20of%20Washington&ref=cars-for-charity" role="menuitem" target="_blank" rel="noopener noreferrer" class="external-link">Donate a car <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Who we are <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="${p('about/who-we-are.html')}" role="menuitem">Our team</a></li>
+              <li><a href="${p('impact-stories/index.html')}" role="menuitem">Impact stories</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <ul class="drawer-list">
+      ${isHome ? '' : `<li>
+        <a href="${p('index.html')}" class="drawer-link">Home</a>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>`}
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          For clients <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="${p('get-services/index.html')}">Employment services</a></li>
+          <li><a href="${p('earned-income-program.html')}">Employer services</a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          For partners <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="${p('partners/employment-partners.html')}">Employment partners</a></li>
+          <li><a href="${p('partners/foundation-funders.html')}">Foundation funders</a></li>
+          <li><a href="${p('who-we-serve/index.html')}">Who we serve</a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          Donate <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="${p('give/donate.html')}">Donate</a></li>
+          <li><a href="https://www.cardonationwizard.com/cars-for-charity/donate/donate-a-car-for-charity.html?affilID=Cares%20of%20Washington&affilName=Cares%20of%20Washington&ref=cars-for-charity" target="_blank" rel="noopener noreferrer" class="external-link">Donate a car <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+      <li class="drawer-has-dropdown">
+        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
+          Who we are <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+        <ul class="drawer-dropdown">
+          <li><a href="${p('about/who-we-are.html')}">Our team</a></li>
+          <li><a href="${p('impact-stories/index.html')}">Impact stories</a></li>
+        </ul>
+        <span class="drawer-divider" aria-hidden="true"></span>
+      </li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="${p('get-services/index.html')}" class="btn btn-primary btn-full">Service overview</a>
+    </div>
+  </nav>`;
+
+  const footerHTML = `
+  <footer class="site-footer site-footer-home">
+    <div class="footer-home-inner">
+      <div class="footer-home-col">
+        <p class="footer-home-label">Location</p>
+        <p class="footer-home-value">
+          <a href="https://www.google.com/maps/search/?api=1&query=1833+N+105th+St+Suite+202%2C+Seattle%2C+WA+98133" target="_blank" rel="noopener noreferrer">
+            1833 N 105th St Suite 202<br>Seattle, WA 98133
+          </a>
+        </p>
+      </div>
+      <div class="footer-home-col">
+        <p class="footer-home-label">Contact cares</p>
+        <p class="footer-home-value">Phone &nbsp;<a href="tel:+12069381253">(206) 938-1253</a></p>
+        <p class="footer-home-value">Email &nbsp;<a href="mailto:admin@caresofwa.org">admin@caresofwa.org</a></p>
+      </div>
+      <div class="footer-home-col">
+        <p class="footer-home-label">Hours</p>
+        <p class="footer-home-value">Monday – Friday<br>8AM – 5PM</p>
+      </div>
+      <nav class="footer-home-col footer-home-links" aria-label="Footer navigation">
+        <a href="https://www.indeed.com/cmp/Cares-of-Washington/jobs" target="_blank" rel="noopener noreferrer">Careers</a>
+        <a href="${p('about/privacy-policy.html')}">Privacy Policy</a>
+        <a href="${p('about/blog.html')}">Blog</a>
+      </nav>
+      <div class="footer-home-carf">
+        <img src="${p('assets/logo-carf.webp')}" alt="CARF Accredited" />
+      </div>
+    </div>
+  </footer>`;
+
+  const headerRoot = document.querySelector('[data-site-header]');
+  const footerRoot = document.querySelector('[data-site-footer]');
+  if (headerRoot) headerRoot.outerHTML = headerHTML;
+  if (footerRoot) footerRoot.outerHTML = footerHTML;
+})();
+
+// ===== EVERYTHING BELOW RUNS AGAINST THE INJECTED CHROME =====
+
 const hamburger = document.querySelector('.hamburger');
 const drawer = document.getElementById('mobile-drawer');
 const overlay = document.getElementById('drawer-overlay');
@@ -131,6 +290,7 @@ new ResizeObserver(priorityNav).observe(document.querySelector('.header-inner'))
   if (!category) return;
 
   const hrefHints = {
+    'get-services': ['get-services'],
     partners: ['employment-partners', 'foundation-funders', 'who-we-serve', 'become-a-partner'],
     donate: ['give/donate'],
     'who-we-are': ['who-we-are.html', 'impact-stories'],
@@ -138,16 +298,6 @@ new ResizeObserver(priorityNav).observe(document.querySelector('.header-inner'))
 
   function markActive(root) {
     if (!root) return;
-
-    if (category === 'get-services') {
-      root.querySelectorAll('a[href*="get-services"]').forEach(a => {
-        if ((a.classList.contains('nav-link') || a.classList.contains('drawer-link'))
-          && !a.classList.contains('drawer-dropdown-trigger')) {
-          a.classList.add('active');
-        }
-      });
-      return;
-    }
 
     const hints = hrefHints[category];
     root.querySelectorAll('.has-dropdown, .drawer-has-dropdown').forEach(item => {

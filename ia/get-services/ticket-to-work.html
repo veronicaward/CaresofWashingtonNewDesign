@@ -4,100 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ticket to Work — Cares of Washington</title>
-  <link rel="stylesheet" href="../assets/css/styles.css?v=3" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=11" />
 </head>
 <body>
 
-  <!-- ===== HEADER / NAV ===== -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="../index.html" class="logo" aria-label="Cares of Washington home">
-        <img src="../assets/cares-logo.webp" alt="Cares of Washington" class="logo-img" />
-      </a>
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="../get-services/index.html" class="nav-link">Get services</a></li>
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-              For partners <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="../partners/employment-partners.html" role="menuitem">Employment partners</a></li>
-              <li><a href="../partners/foundation-funders.html" role="menuitem">Foundation funders</a></li>
-              <li><a href="../who-we-serve/index.html" role="menuitem">Who we serve</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-              Donate <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="../give/donate.html" role="menuitem">Donate</a></li>
-              <li><a href="https://www.cardonationwizard.com/cars-for-charity/donate/donate-a-car-for-charity.html?affilID=Cares%20of%20Washington&affilName=Cares%20of%20Washington&ref=cars-for-charity" role="menuitem" target="_blank" rel="noopener noreferrer" class="external-link">Donate a car <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-              Who we are <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="../about/who-we-are.html" role="menuitem">Our team</a></li>
-              <li><a href="../impact-stories/index.html" role="menuitem">Impact stories</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ===== MOBILE DRAWER ===== -->
-  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
-  <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
-    <ul class="drawer-list">
-      <li>
-        <a href="../get-services/index.html" class="drawer-link">Get services</a>
-        <span class="drawer-divider" aria-hidden="true"></span>
-      </li>
-      <li class="drawer-has-dropdown">
-        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
-          For partners <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
-        </button>
-        <ul class="drawer-dropdown">
-          <li><a href="../partners/employment-partners.html">Employment partners</a></li>
-          <li><a href="../partners/foundation-funders.html">Foundation funders</a></li>
-          <li><a href="../who-we-serve/index.html">Who we serve</a></li>
-        </ul>
-        <span class="drawer-divider" aria-hidden="true"></span>
-      </li>
-      <li class="drawer-has-dropdown">
-        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
-          Donate <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
-        </button>
-        <ul class="drawer-dropdown">
-          <li><a href="../give/donate.html">Donate</a></li>
-          <li><a href="https://www.cardonationwizard.com/cars-for-charity/donate/donate-a-car-for-charity.html?affilID=Cares%20of%20Washington&affilName=Cares%20of%20Washington&ref=cars-for-charity" target="_blank" rel="noopener noreferrer" class="external-link">Donate a car <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
-        </ul>
-        <span class="drawer-divider" aria-hidden="true"></span>
-      </li>
-      <li class="drawer-has-dropdown">
-        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
-          Who we are <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
-        </button>
-        <ul class="drawer-dropdown">
-          <li><a href="../about/who-we-are.html">Our team</a></li>
-          <li><a href="../impact-stories/index.html">Impact stories</a></li>
-        </ul>
-        <span class="drawer-divider" aria-hidden="true"></span>
-      </li>
-    </ul>
-    <div class="drawer-footer">
-      <a href="../get-services/index.html" class="btn btn-primary btn-full">Service overview</a>
-    </div>
-  </nav>
-
+  <div data-site-header></div>
   <!-- ===== PAGE CONTENT ===== -->
   <main class="inner-page">
 
@@ -216,37 +127,8 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer site-footer-home">
-    <div class="footer-home-inner">
-      <div class="footer-home-col">
-        <p class="footer-home-label">Location</p>
-        <p class="footer-home-value">
-          <a href="https://www.google.com/maps/search/?api=1&query=1833+N+105th+St+Suite+202%2C+Seattle%2C+WA+98133" target="_blank" rel="noopener noreferrer">
-            1833 N 105th St Suite 202<br>Seattle, WA 98133
-          </a>
-        </p>
-      </div>
-      <div class="footer-home-col">
-        <p class="footer-home-label">Contact cares</p>
-        <p class="footer-home-value">Phone &nbsp;<a href="tel:+12069381253">(206) 938-1253</a></p>
-        <p class="footer-home-value">Email &nbsp;<a href="mailto:admin@caresofwa.org">admin@caresofwa.org</a></p>
-      </div>
-      <div class="footer-home-col">
-        <p class="footer-home-label">Hours</p>
-        <p class="footer-home-value">Monday – Friday<br>8AM – 5PM</p>
-      </div>
-      <nav class="footer-home-col footer-home-links" aria-label="Footer navigation">
-        <a href="https://www.indeed.com/cmp/Cares-of-Washington/jobs" target="_blank" rel="noopener noreferrer">Careers</a>
-        <a href="../about/privacy-policy.html">Privacy Policy</a>
-        <a href="../about/blog.html">Blog</a>
-      </nav>
-      <div class="footer-home-carf">
-        <img src="../assets/logo-carf.webp" alt="CARF Accredited" />
-      </div>
-    </div>
-  </footer>
+  <div data-site-footer></div>
 
-  <script src="../assets/js/nav.js?v=3"></script>
+  <script src="../assets/js/nav.js?v=5"></script>
 </body>
 </html>
