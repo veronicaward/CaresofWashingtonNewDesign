@@ -109,6 +109,64 @@ function priorityNav() {
 priorityNav();
 new ResizeObserver(priorityNav).observe(document.querySelector('.header-inner'));
 
+// ===== ACTIVE NAV HIGHLIGHTING =====
+// Highlights the top-level nav item matching the current page's section.
+// Scans the full path (not just the first segment) so this also works when
+// the site is opened via file:// or from a nested/proxied path.
+(function () {
+  const segments = window.location.pathname.split('/').filter(Boolean);
+
+  const dirToCategory = {
+    'get-services': 'get-services',
+    'partners': 'partners',
+    'who-we-serve': 'partners',
+    'give': 'donate',
+    'about': 'who-we-are',
+    'impact-stories': 'who-we-are',
+  };
+  let category = null;
+  for (const seg of segments) {
+    if (dirToCategory[seg]) { category = dirToCategory[seg]; break; }
+  }
+  if (!category) return;
+
+  const hrefHints = {
+    partners: ['employment-partners', 'foundation-funders', 'who-we-serve', 'become-a-partner'],
+    donate: ['give/donate'],
+    'who-we-are': ['who-we-are.html', 'impact-stories'],
+  };
+
+  function markActive(root) {
+    if (!root) return;
+
+    if (category === 'get-services') {
+      root.querySelectorAll('a[href*="get-services"]').forEach(a => {
+        if ((a.classList.contains('nav-link') || a.classList.contains('drawer-link'))
+          && !a.classList.contains('drawer-dropdown-trigger')) {
+          a.classList.add('active');
+        }
+      });
+      return;
+    }
+
+    const hints = hrefHints[category];
+    root.querySelectorAll('.has-dropdown, .drawer-has-dropdown').forEach(item => {
+      const menu = item.querySelector('.dropdown-menu, .drawer-dropdown');
+      if (!menu) return;
+      const match = Array.from(menu.querySelectorAll('a[href]')).some(a =>
+        hints.some(h => a.getAttribute('href').includes(h))
+      );
+      if (match) {
+        const trigger = item.querySelector('.dropdown-trigger, .drawer-dropdown-trigger');
+        if (trigger) trigger.classList.add('active');
+      }
+    });
+  }
+
+  markActive(document.querySelector('.desktop-nav'));
+  markActive(document.getElementById('mobile-drawer'));
+})();
+
 // ===== CONFIRMATION TOAST =====
 if (sessionStorage.getItem('cares_message_sent')) {
   sessionStorage.removeItem('cares_message_sent');
