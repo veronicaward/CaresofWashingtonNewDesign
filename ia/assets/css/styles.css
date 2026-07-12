@@ -963,7 +963,10 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   border-radius: 50%;
   background: #c5c5c5;
   flex-shrink: 0;
+  object-fit: cover;
+  display: block;
 }
+.coordinator-avatar-lg { width: 96px; height: 96px; }
 .coordinator-info {
   display: flex;
   flex-direction: column;
@@ -1068,7 +1071,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 
 .ceo-quote {
   margin: 0;
-  margin-left: calc(56px + 16px);
+  margin-left: calc(96px + 16px);
   display: flex;
   flex-direction: column;
   gap: 12px;
