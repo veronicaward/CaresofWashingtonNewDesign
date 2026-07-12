@@ -673,33 +673,11 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   display: block;
 }
 
-/* ===== HOMEPAGE: NEWSLETTER ===== */
-.newsletter-section {
-  max-width: var(--content-w);
-  margin: 0 auto;
-  padding: 8px var(--content-px) 64px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-}
 .newsletter-desc {
   font-size: 0.92rem;
   color: var(--text-mid);
-  margin-top: -12px;
+  text-align: center;
 }
-.newsletter-photo {
-  width: 100%;
-  max-width: 320px;
-}
-.newsletter-photo img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
-}
-.newsletter-btn { border-radius: 999px; padding: 12px 40px; }
 
 @media (max-width: 640px) {
   .home-hero-inner { grid-template-columns: 1fr; }
@@ -1182,7 +1160,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   color: var(--text-mid);
   margin-top: 4px;
 }
-.steps-cta { display: block; width: fit-content; margin: 0 auto; }
+.steps-cta { display: block; width: fit-content; margin: 16px auto 0; }
 
 @media (max-width: 640px) {
   .services-columns { grid-template-columns: 1fr; gap: 24px; }
@@ -1193,22 +1171,30 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 .eip-hero { padding: 48px 0 40px; }
 .eip-hero .home-hero-text { justify-content: space-between; }
 .eip-video-section { margin-top: 72px; margin-bottom: 120px; text-align: center; }
+.eip-video-section .services-intro { margin-bottom: 4px; }
 .eip-video-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   max-width: var(--content-w);
-  margin: 24px auto 0;
+  margin: 0 auto;
 }
 .eip-video-thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: #c5c5c5;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
   margin-bottom: 10px;
 }
 .eip-video-caption {
   font-size: 0.8rem;
   color: var(--text-dark);
+}
+.eip-video-part {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2px;
 }
 .outcomes-section { margin-bottom: 120px; }
 .outcomes-columns {
