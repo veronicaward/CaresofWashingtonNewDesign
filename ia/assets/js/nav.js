@@ -22,23 +22,17 @@
       </a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <ul class="nav-list">
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-              For clients <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="${p('get-services/index.html')}" role="menuitem">Employment services</a></li>
-              <li><a href="${p('earned-income-program.html')}" role="menuitem">Employer services</a></li>
-            </ul>
+          <li>
+            <a href="${p('get-services/index.html')}" class="nav-link">Get services</a>
           </li>
           <li class="has-dropdown">
             <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
               For partners <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <ul class="dropdown-menu" role="menu">
+              <li><a href="${p('earned-income-program.html')}" role="menuitem">Create an inclusive workplace</a></li>
               <li><a href="${p('partners/community-partners.html')}" role="menuitem">Community partners</a></li>
               <li><a href="${p('partners/foundation-funders.html')}" role="menuitem">Foundation funders</a></li>
-              <li><a href="${p('who-we-serve/index.html')}" role="menuitem">Who we serve</a></li>
             </ul>
           </li>
           <li class="has-dropdown">
@@ -74,14 +68,8 @@
         <a href="${p('index.html')}" class="drawer-link">Home</a>
         <span class="drawer-divider" aria-hidden="true"></span>
       </li>`}
-      <li class="drawer-has-dropdown">
-        <button class="drawer-link drawer-dropdown-trigger" aria-expanded="false">
-          For clients <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
-        </button>
-        <ul class="drawer-dropdown">
-          <li><a href="${p('get-services/index.html')}">Employment services</a></li>
-          <li><a href="${p('earned-income-program.html')}">Employer services</a></li>
-        </ul>
+      <li>
+        <a href="${p('get-services/index.html')}" class="drawer-link">Get services</a>
         <span class="drawer-divider" aria-hidden="true"></span>
       </li>
       <li class="drawer-has-dropdown">
@@ -89,9 +77,9 @@
           For partners <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
         </button>
         <ul class="drawer-dropdown">
+          <li><a href="${p('earned-income-program.html')}">Create an inclusive workplace</a></li>
           <li><a href="${p('partners/community-partners.html')}">Community partners</a></li>
           <li><a href="${p('partners/foundation-funders.html')}">Foundation funders</a></li>
-          <li><a href="${p('who-we-serve/index.html')}">Who we serve</a></li>
         </ul>
         <span class="drawer-divider" aria-hidden="true"></span>
       </li>
@@ -286,21 +274,33 @@ new ResizeObserver(priorityNav).observe(document.querySelector('.header-inner'))
     'about': 'who-we-are',
     'impact-stories': 'who-we-are',
   };
+  const fileToCategory = {
+    'earned-income-program.html': 'partners',
+  };
   let category = null;
   for (const seg of segments) {
     if (dirToCategory[seg]) { category = dirToCategory[seg]; break; }
   }
+  if (!category) {
+    const file = segments[segments.length - 1];
+    if (file && fileToCategory[file]) category = fileToCategory[file];
+  }
   if (!category) return;
 
   const hrefHints = {
-    'get-services': ['get-services'],
-    partners: ['community-partners', 'foundation-funders', 'who-we-serve', 'become-a-partner'],
+    partners: ['community-partners', 'foundation-funders', 'who-we-serve', 'become-a-partner', 'earned-income-program'],
     donate: ['give/donate'],
     'who-we-are': ['who-we-are.html', 'impact-stories'],
   };
 
   function markActive(root) {
     if (!root) return;
+
+    if (category === 'get-services') {
+      root.querySelectorAll('a.nav-link[href*="get-services"], a.drawer-link[href*="get-services"]')
+        .forEach(a => a.classList.add('active'));
+      return;
+    }
 
     const hints = hrefHints[category];
     root.querySelectorAll('.has-dropdown, .drawer-has-dropdown').forEach(item => {
