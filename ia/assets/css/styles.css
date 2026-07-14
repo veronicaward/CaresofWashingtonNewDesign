@@ -1085,6 +1085,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 
 /* ===== GET SERVICES OVERVIEW ===== */
 .services-hero { padding: 48px 0 40px; }
+.services-hero .home-hero-text { justify-content: space-between; }
 .decision-tree-img {
   width: 100%;
   height: auto;
@@ -1097,7 +1098,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   max-width: 680px;
   margin: 0 auto 24px;
 }
-.services-section { margin-bottom: 120px; }
+.services-section { margin-top: 56px; margin-bottom: 120px; }
 .services-section .section-heading,
 .how-to-section .section-heading,
 .decision-section .section-heading,
@@ -1140,8 +1141,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   align-items: center;
 }
 .program-links a { color: var(--teal); font-weight: 500; }
-.how-to-section { margin-bottom: 72px; }
-.steps-section { text-align: center; margin-bottom: 72px; }
+.how-to-section { margin-bottom: 120px; }
 .steps-grid {
   display: flex;
   justify-content: center;
@@ -1149,7 +1149,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
-.step { max-width: 130px; }
+.step { max-width: 130px; text-align: center; }
 .step-number {
   display: block;
   font-size: 1.8rem;
@@ -1163,11 +1163,48 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   color: var(--text-mid);
   margin-top: 4px;
 }
-.steps-cta { display: block; width: fit-content; margin: 16px auto 0; }
+
+/* ===== GET SERVICES: SPLIT SECTIONS ===== */
+.services-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.services-split-media img { width: 100%; height: auto; display: block; }
+.services-split-content .section-heading,
+.services-split-content .services-intro { text-align: left; margin-left: 0; margin-right: 0; max-width: none; }
+.services-split-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 40px;
+  margin-top: 16px;
+}
+.services-split-list-grid .plain-list,
+.services-split-list-grid .plain-list-label { text-align: left; }
+
+.how-to-split-grid {
+  display: grid;
+  grid-template-columns: 524px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.how-to-split-content { max-width: 524px; }
+.how-to-split-content .section-heading,
+.how-to-split-content .services-intro { text-align: left; margin-left: 0; margin-right: 0; max-width: none; }
+.how-to-split-content .program-links { align-items: flex-start; }
+.how-to-split-steps { justify-content: space-between; gap: 0; flex-wrap: nowrap; width: 100%; margin-bottom: 0; margin-top: 8px; flex-shrink: 0; }
 
 @media (max-width: 640px) {
   .services-columns { grid-template-columns: 1fr; gap: 24px; }
   .steps-grid { gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .services-split-grid { grid-template-columns: 1fr; }
+  .services-split-list-grid { grid-template-columns: 1fr; gap: 24px; }
+  .how-to-split-grid { grid-template-columns: 1fr; }
+  .how-to-split-steps { margin-top: 24px; }
 }
 
 /* ===== EARNED INCOME PROGRAM (CREATE AN INCLUSIVE WORK PLACE) ===== */
@@ -1501,11 +1538,12 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   gap: 40px;
   align-items: flex-start;
 }
-.story-feature-photos { display: flex; gap: 24px; flex-shrink: 0; }
+.story-feature-photos { display: flex; gap: 24px; width: 55%; max-width: 100%; flex-shrink: 0; }
 .story-feature-photo {
-  height: 380px;
-  width: auto;
-  max-width: 100%;
+  flex: 1;
+  width: 0;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   display: block;
   border-radius: 0;
 }
@@ -1516,11 +1554,19 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   flex-direction: column;
   gap: 16px;
 }
+.story-feature-media { width: 55%; max-width: 100%; flex-shrink: 0; }
+.story-feature-media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
 
 @media (max-width: 768px) {
   .story-feature { flex-direction: column; }
-  .story-feature-photos { flex-wrap: wrap; }
-  .story-feature-photo { height: auto; width: 100%; max-width: 320px; }
+  .story-feature-photos { width: 100%; }
+  .story-feature-media { width: 100%; }
 }
 
 /* ===== INNER PAGE SHARED ===== */
