@@ -1095,7 +1095,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 }
 .services-intro {
   text-align: center;
-  max-width: 680px;
+  max-width: 800px;
   margin: 0 auto 24px;
 }
 .services-section { margin-top: 56px; margin-bottom: 120px; }
@@ -1210,22 +1210,25 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 /* ===== EARNED INCOME PROGRAM (CREATE AN INCLUSIVE WORK PLACE) ===== */
 .eip-hero { padding: 48px 0 40px; }
 .eip-hero .home-hero-text { justify-content: space-between; }
-.eip-video-section { margin-top: 72px; margin-bottom: 120px; text-align: center; }
-.eip-video-section .services-intro { margin-bottom: 4px; }
+.eip-video-section { margin-bottom: 160px; }
+.eip-video-section .section-heading { text-align: left; }
+.eip-video-section .services-intro { text-align: left; margin-left: 0; margin-right: 0; margin-bottom: 4px; }
 .eip-video-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   max-width: var(--content-w);
   margin: 0 auto;
+  text-align: center;
 }
 .eip-video-thumb {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  border-radius: 0;
-  margin-bottom: 10px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
 }
 .eip-video-caption {
   font-size: 0.8rem;
@@ -1236,7 +1239,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   font-weight: 700;
   margin-bottom: 2px;
 }
-.outcomes-section { margin-bottom: 120px; }
+.outcomes-section { margin-bottom: 56px; }
 .outcomes-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1244,11 +1247,37 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   max-width: 600px;
   margin: 12px auto 0;
 }
-.diversity-section { margin-bottom: 56px; }
+.outcomes-check-list { text-align: left; }
+.outcomes-check-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+.outcomes-check-list .check-icon {
+  width: 18px;
+  height: 18px;
+  color: #22a06b;
+  flex-shrink: 0;
+}
+.diversity-section { margin-top: 96px; margin-bottom: 120px; }
+.diversity-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.diversity-split-stats { justify-content: flex-start; gap: 24px; flex-wrap: nowrap; }
+.diversity-split-content .section-heading,
+.diversity-split-content .services-intro { text-align: left; margin-left: 0; margin-right: 0; max-width: none; }
 
 @media (max-width: 640px) {
   .eip-video-grid { grid-template-columns: repeat(2, 1fr); }
   .outcomes-columns { grid-template-columns: 1fr; max-width: 320px; }
+}
+
+@media (max-width: 768px) {
+  .diversity-split-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== COMMUNITY PARTNERS ===== */
